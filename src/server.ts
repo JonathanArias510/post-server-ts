@@ -3,6 +3,7 @@ import morgan from 'morgan';
 
 
 import  indexLaborapp  from './rutas/routesLaborapp';
+import cors from 'cors';
 
 class Server{
 
@@ -24,6 +25,7 @@ class Server{
 
   midllewares(): void{
     this.app.use(morgan('dev'));
+    this.app.use(cors());
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: false }));
   }
